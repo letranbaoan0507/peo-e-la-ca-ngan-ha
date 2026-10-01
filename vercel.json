@@ -1,0 +1,1 @@
+{"framework":null,"buildCommand":"npm run build","outputDirectory":"dist","rewrites":[{"source":"/api/galaxies/:id","destination":"/api/galaxies?id=:id"},{"source":"/media/:key*","destination":"/api/media?key=:key*"},{"source":"/g/:id","destination":"/index.html"}]}
