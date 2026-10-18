@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import {writeFile} from 'node:fs/promises';
 import {PNG} from 'pngjs';
 import jsQR from 'jsqr';
-import {createGiftQR} from '../src/qr.js';
+import {createGiftQR,insideHeart} from '../src/qr.js';
 const sample='https://peo-e-la-ca-ngan-ha.vercel.app/g/01234567-0123-4567-89ab-0123456789ab';
 for(const text of [sample,'https://example.com/g/01234567-0123-4567-89ab-0123456789ab','https://'+'long-domain-'.repeat(8)+'example.com/g/01234567-0123-4567-89ab-0123456789ab']){
   for(const heart of [true,false])for(const cell of [3,6,10]){
@@ -19,3 +19,12 @@ for(const text of [sample,'https://example.com/g/01234567-0123-4567-89ab-0123456
   }
 }
 console.log('PASS: heart/square QR decode at 3 sizes and 3 link lengths.');
+
+// The reference has two round lobes, a clear cleft and one long, narrow tip.
+assert.equal(insideHeart(.25,.02),true);
+assert.equal(insideHeart(.75,.02),true);
+assert.equal(insideHeart(.5,.12),false);
+assert.equal(insideHeart(.5,.17),true);
+assert.equal(insideHeart(.5,.99),true);
+assert.equal(insideHeart(.1,.95),false);
+for(let x=0;x<=1;x+=.02)for(let y=0;y<=1;y+=.02)assert.equal(insideHeart(x,y),insideHeart(1-x,y));
