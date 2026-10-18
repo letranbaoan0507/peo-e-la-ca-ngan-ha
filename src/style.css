@@ -2,3 +2,7 @@
 
 .focused-galaxy-photo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(86vmin,92vw);height:min(86vmin,92vw);object-fit:cover;border-radius:7px;z-index:2;cursor:zoom-out;box-shadow:0 12px 42px #0005;image-rendering:auto}
 .focused-galaxy-photo[hidden]{display:none!important}
+
+.scene-top{justify-content:flex-end}.orientation-prompt{display:none;position:absolute;inset:0;z-index:20;background:#17143c;color:#ffe1f2;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:24px}.orientation-prompt p{font-size:clamp(18px,4vw,24px);line-height:1.5}.rotate-phone{width:120px;height:120px}.rotate-phone-device{transform-origin:60px 60px;animation:rotate-phone 2.6s ease-in-out infinite}@keyframes rotate-phone{0%,15%{transform:rotate(0deg)}60%,85%{transform:rotate(-90deg)}100%{transform:rotate(0deg)}}@media(orientation:portrait) and (max-width:1024px) and (any-pointer:coarse){.universe:not([hidden])>.orientation-prompt{display:flex}.universe:not([hidden])>:not(.orientation-prompt){visibility:hidden!important}}@media(prefers-reduced-motion:reduce){.rotate-phone-device{animation:none;transform:rotate(-90deg)}}
+
+.scene-volume input{touch-action:pan-x}

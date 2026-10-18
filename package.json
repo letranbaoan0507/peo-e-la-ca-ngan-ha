@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "test": "node scripts/test-independent.mjs",
+    "test": "node scripts/test-independent.mjs && node scripts/test-ui-fixes.mjs",
     "dev": "node scripts/dev.mjs",
     "start": "node scripts/dev.mjs"
   },
