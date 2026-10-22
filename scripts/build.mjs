@@ -6,6 +6,7 @@ await mkdir('dist', { recursive: true });
 
 await cp('src/index.html', 'dist/index.html');
 await cp('src/style.css', 'dist/style.css');
+await cp('src/project-library.css', 'dist/project-library.css');
 await cp('public', 'dist', { recursive: true });
 
 await build({
@@ -16,3 +17,4 @@ await build({
   minify: true,
   outfile: 'dist/app.js'
 });
+
